@@ -2,7 +2,16 @@
 
 一個簡潔、直觀的專案管理儀表板，用於追蹤和管理多個專案的進度、任務和時程。專案使用純 HTML、CSS 和 JavaScript 開發，無需任何外部框架或庫。
 
-![專案儀表板預覽](https://i.imgur.com/placeholder.png)
+## 專案預覽
+
+### 專案儀表板
+![專案儀表板預覽](./images/dashboard.png)
+
+### 專案詳細頁面
+![專案詳細頁面預覽](./images/project-detail.png)
+
+### 專案詳細頁面2
+![專案詳細頁面預覽2](./images/project-detail2.png)
 
 ## 功能特色
 
