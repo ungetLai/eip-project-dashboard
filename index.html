@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專案面板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="dashboard-container">
+  <button class="add-project-btn" onclick="addProject()">＋ 新增專案</button>
+  <button class="clear-data-btn" onclick="clearLocalData()">清除資料</button>
+  <h1 class="dashboard-title">專案面板</h1>
+  <section class="projects-grid">
+    <div class="project-card">
+      <h2 class="project-name">專案 Alpha</h2>
+      <div class="project-owner">John Smith</div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fg" style="width: 70%"></div>
+        <span class="progress-percent">70%</span>
+      </div>
+      <div class="project-status">Status: <span class="status-inprogress">In Progress</span></div>
+      <div class="project-due">Due: May 31</div>
+      <div class="project-id">Id : 1</div>
+    </div>
+
+  </section>
+</main>
+
+<!-- 新增專案彈窗 -->
+<div id="add-project-modal" class="modal">
+  <div class="modal-content">
+    <h2 class="modal-title">新增專案</h2>
+    <form id="add-project-form">
+      <div class="form-group">
+        <label for="project-name">專案名稱:</label>
+        <input type="text" id="project-name" required>
+      </div>
+      <div class="form-group">
+        <label for="project-owner">負責人:</label>
+        <input type="text" id="project-owner" required>
+      </div>
+      <div class="form-group">
+        <label for="project-due">截止日期:</label>
+        <input type="date" id="project-due" required>
+      </div>
+      <div class="modal-buttons">
+        <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+        <button type="submit" id="create-btn" class="create-btn">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

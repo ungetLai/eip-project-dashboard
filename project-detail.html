@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專案詳細資訊</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detail-style.css">
+</head>
+<body>
+    <main class="detail-container">
+        <div class="detail-header">
+            <a href="index.html" class="back-btn">← 返回專案列表</a>
+            <h1 id="project-title" class="detail-title">專案詳細資訊</h1>
+        </div>
+
+        <!-- 專案基本資訊區塊 -->
+        <section class="detail-info-section">
+            <div class="detail-card">
+                <div class="detail-row">
+                    <div class="detail-label">專案負責人：</div>
+                    <div id="project-owner" class="detail-value">載入中...</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">專案狀態：</div>
+                    <div id="project-status" class="detail-value"><span class="status-badge">載入中...</span></div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">目前進度：</div>
+                    <div class="detail-value">
+                        <div class="detail-progress-bar-bg">
+                            <div id="project-progress-bar" class="detail-progress-bar-fg" style="width: 0%"></div>
+                            <span id="project-progress" class="detail-progress-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">截止日期：</div>
+                    <div id="project-due" class="detail-value">載入中...</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">剩餘時間：</div>
+                    <div id="project-remaining" class="detail-value">載入中...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 專案任務區塊 -->
+        <section class="detail-section">
+            <div class="section-header">
+                <h2 class="section-title">專案任務 <span class="task-count" id="task-count">0</span></h2>
+                <button class="add-task-btn" id="add-task-btn">＋ 新增任務</button>
+            </div>
+            <div id="tasks-container" class="tasks-container">
+                <!-- 任務列表將由 JavaScript 動態產生 -->
+                <div class="empty-state">尚無任務資料</div>
+            </div>
+        </section>
+
+        <!-- 專案時程區塊 -->
+        <section class="detail-section">
+            <h2 class="section-title">專案時程</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot completed"></div>
+                    <div class="timeline-date">2025/03/15</div>
+                    <div class="timeline-content">
+                        <h3>專案啟動</h3>
+                        <p>專案正式啟動，確認需求與範圍</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot completed"></div>
+                    <div class="timeline-date">2025/04/10</div>
+                    <div class="timeline-content">
+                        <h3>需求分析完成</h3>
+                        <p>完成需求文件與系統設計規格</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot current"></div>
+                    <div class="timeline-date">2025/05/20</div>
+                    <div class="timeline-content">
+                        <h3>開發階段</h3>
+                        <p>系統核心功能開發中</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025/06/15</div>
+                    <div class="timeline-content">
+                        <h3>測試階段</h3>
+                        <p>系統測試與除錯</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025/07/01</div>
+                    <div class="timeline-content">
+                        <h3>專案完成</h3>
+                        <p>系統上線與交付</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 討論區塊 -->
+        <section class="detail-section">
+            <h2 class="section-title">討論串</h2>
+            <div class="discussion-container">
+                <div class="comment-item">
+                    <div class="comment-avatar">JD</div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Jane Doe</span>
+                            <span class="comment-time">2025/05/01 14:30</span>
+                        </div>
+                        <div class="comment-text">
+                            需求文件已更新，請團隊成員查看最新版本，並提供意見。
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="comment-avatar">MB</div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Michael Brown</span>
+                            <span class="comment-time">2025/05/02 09:15</span>
+                        </div>
+                        <div class="comment-text">
+                            已確認需求文件，前端部分預計下週五前完成。
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="comment-avatar">SL</div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Sophia Lee</span>
+                            <span class="comment-time">2025/05/03 16:45</span>
+                        </div>
+                        <div class="comment-text">
+                            後端API開發進度已更新，請參考文件中的接口說明。
+                        </div>
+                    </div>
+                </div>
+                <!-- 新增留言區塊 -->
+                <div class="add-comment">
+                    <textarea placeholder="輸入您的留言..." class="comment-input"></textarea>
+                    <button class="comment-submit">發送</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 新增任務彈窗 -->
+    <div id="add-task-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">新增任務</h2>
+            <form id="add-task-form">
+                <div class="form-group">
+                    <label for="task-title">任務名稱:</label>
+                    <input type="text" id="task-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-assignee">負責人員:</label>
+                    <input type="text" id="task-assignee" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-due">截止日期:</label>
+                    <input type="date" id="task-due" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="cancel-task-btn" class="cancel-btn">取消</button>
+                    <button type="submit" id="create-task-btn" class="create-btn">建立</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="detail.js"></script>
+</body>
+</html>
